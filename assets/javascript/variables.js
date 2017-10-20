@@ -1,3 +1,6 @@
+$('body').requestFullscreen()
+
+
 var battle = false;
 
 //stores...
