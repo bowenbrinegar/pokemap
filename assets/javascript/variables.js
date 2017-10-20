@@ -1,4 +1,4 @@
-$('body').requestFullscreen()
+$(document).requestFullscreen()
 
 
 var battle = false;
