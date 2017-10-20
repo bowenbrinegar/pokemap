@@ -751,7 +751,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 @media only screen 
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
+  and (-webkit-min-device-pixel-ratio: 1)
   and (orientation: portrait) { 
   #mainContainer{
     height:100%;
@@ -776,6 +776,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
     background: rgba(0,0,0,.8);
     border-radius: 0px;
     border: none;
+    padding-bottom: 5px;
   }
 
   .modal2 {
