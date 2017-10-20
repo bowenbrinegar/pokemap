@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Go Browser</title>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Patua+One" rel="stylesheet">
+
+    <link rel='stylesheet' type='text/css' href='assets/css/style.css'>
+    
+</head>
+<body>
+
+    <div id='mainContainer'>
+
+
+      <div id='userPortal' class='bentoBox'>
+        <img id='logLogo' src='assets/images/mapIcon.png'>
+        <div id='logInContainer'>
+          <div class="inputStyle">
+                <input type="text" id="email" class="form-control" name="search" placeholder="Email" required>
+          </div>
+          <div class="inputStyle">
+              <input type="password" id="password" class="form-control" name="begin" placeholder="Password" required>
+          </div>
+          <div class="input-group">
+              <button id="sumbit" class="btn btn-default" type="button">Submit</button>  
+          </div>
+        </div>
+
+         <div class="selectStyle">
+                <select id="sel1">
+                  <option value="1" selected="selected">Log In</option>
+                  <option value="2">Create Account</option>
+                </select>
+          </div>
+      </div>
+
+      <div id="map"></div>
+
+      <div id='iconBox'>
+        <img class='pokemap' src='assets/images/pokemap.png'>
+      </div>
+      
+      <div id='buttonBox'>
+        <button id='attackButton'><img id='berry' src='assets/images/a.png'></button>
+        <button id='catchButton'><img id='berry' src='assets/images/b.png'></button>
+        <button id='berriesButton'><img id='berry' src='assets/images/berry.png'></button>
+        <button id='pouchButton'><img id='berry' src='assets/images/bag-icon.png'></button>
+        <button id="infoButton"><span class='glyphicon glyphicon-question-sign'></span></button> 
+      </div>
+
+      <div id='pouch' class='bentoBox'>
+
+        <button id='closePouch'>
+          <span class='glyphicon glyphicon-remove'></span>
+        </button>
+        
+        <div id="pouchControls">
+          <button class='sortby attack'>Attack</button>
+          <button class='sortby name'>Name</button>
+          <button class='sortby type'>Type</button>
+          <button class='sortby hp'>Health</button>
+        </div>
+
+        <div id='collectionBox'>
+          <div id="div1">
+            <div id="pokemonCollection"></div> 
+          </div>
+        </div>
+
+      </div>
+
+      <div id='battleMode' class='bentoBox'>
+        <button id='closeBattle'>&times;</button> 
+          <div id='top'>
+            <div id='triangle-topleft'></div>
+            <div id='boxTop' class='imgBox'></div>
+            <div id="nameTop" class='name'></div>
+
+            <div id='opponentImg'></div>
+            <div id='opponentName'></div>
+            <div id='opponentHealth'></div>
+            <div id='opponentAttack'></div>
+
+          </div>
+          <div id='bottom'>
+            <div id='triangle-bottomright'></div>
+            <div id='boxBottom' class='imgBox'></div>
+            <div id="nameBottom" class='name'></div>
+            
+            <div id='userImg'></div>
+            <div id='userName'></div>
+            <div id='userHealth'></div>
+            <div id='userAttack'></div>
+
+          </div>
+      </div>
+
+    <div id='modalBox'>
+      <div id='infoBox' class='modal2'>
+        <span class='closer'>&times;</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit an im id est laborum.</p>
+      </div>
+
+      <div id='loginFailure' class='modal2'>
+        <span class='closer'>&times;</span>
+        <h1>Login / Create Account Failure Message</h1>
+      </div>
+
+      <div id='loginSuccess' class='modal2'>
+        <span class='closer'>&times;</span>
+        <h1>Login / Create Account Success</h1>
+      </div>
+
+      <div id='pokeCollected' class='modal2'>
+        <span class='closer'>&times;</span>
+        <div class='cardImg'></div>
+          <img id='platform' src='assets/images/platform.png'>
+        <div class='cardName'></div>
+        <div id='statsBox'>
+          <img id="cardHeart" class='heart' src='assets/images/hp.png'>
+          <div class='cardHealth'></div>
+          <img id="cardAtk" class='atk' src='assets/images/atk.png'>
+          <div class='cardAttack'></div>
+        </div>
+        <h1 class='colMes'>Collected!!!</h1>
+      </div>
+
+      <div id='pokeLost' class='modal2'>
+        <span class='closer'>&times;</span>
+        <div class='cardImg'></div>
+          <img id='platform' src='assets/images/platform.png'>
+        <div class='cardName'></div>
+        <div id='statsBox'>
+          <img id="cardHeart" class='heart' src='assets/images/hp.png'>
+          <div class='cardHealth'></div>
+          <img id="cardAtk" class='atk' src='assets/images/atk.png'>
+          <div class='cardAttack'></div>
+        </div>
+        <h1 class='colMes'>You Lost!!!</h1>
+      </div>
+
+      <div id='pokeMissed' class='modal2'>
+        <span class='closer'>&times;</span>
+        <div class='cardImg'></div>
+          <img id='platform' src='assets/images/platform.png'>
+        <div class='cardName'></div>
+        <div id='statsBox'>
+          <img id="cardHeart" class='heart' src='assets/images/hp.png'>
+          <div class='cardHealth'></div>
+          <img id="cardAtk" class='atk' src='assets/images/atk.png'>
+          <div class='cardAttack'></div>
+        </div>
+        <h1 class='colMes'>Missed!!!</h1>
+      </div>
+    </div>
+  
+
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGo7wJFDJdX_rlOnu49NKxv3qnpQeu6-I&libraries=places" async defer></script>
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<!--   <script type="text/javascript" src="assets/javascript/app.js"></script>  -->
+  <!-- remove soon -->
+
+  <script type="text/javascript" src="assets/javascript/variables.js"></script>
+  <script type="text/javascript" src="assets/javascript/config.js"></script>
+  <script type="text/javascript" src="assets/javascript/utilities.js"></script>
+  <script type="text/javascript" src="assets/javascript/map.js"></script>
+  <script type="text/javascript" src="assets/javascript/markers.js"></script>
+  <script type="text/javascript" src="assets/javascript/render.js"></script>
+  <script type="text/javascript" src="assets/javascript/login.js"></script>
+  <script type="text/javascript" src="assets/javascript/battle.js"></script>
+    
+</body>
+</html>
