@@ -1,5 +1,3 @@
-$(document).requestFullscreen()
-
 
 var battle = false;
 
