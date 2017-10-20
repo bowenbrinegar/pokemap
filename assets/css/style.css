@@ -748,10 +748,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
 }
 
 /*mobile view*/
-@media only screen and (max-width: 400px) {
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
   #mainContainer{
     height:100%;
     width: 100%;
+    border-radius: 0px;
   }
 
   #iconBox {
