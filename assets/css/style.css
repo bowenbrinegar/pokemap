@@ -797,7 +797,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4ddb4', end
     height: 85%;
     width: 88%;
   }
+  #top {
+    top: 1%;
+  }
 
+  #bottom {
+    bottom: 1%;
+  }
 
   #triangle-topleft {
     width: 0;
